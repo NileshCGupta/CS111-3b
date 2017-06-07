@@ -147,7 +147,7 @@ for x in range(first_nonr_db, num_blocks):
 		if x in all_datablocks: 
 			all_datablocks.remove(x)
 
-# print(all_datablocks)
+print(all_datablocks)
 
 for block in all_datablocks:
 	print("UNREFERENCED BLOCK", block)
