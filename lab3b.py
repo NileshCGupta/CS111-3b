@@ -116,14 +116,14 @@ for key in datablocks:
 
 		if int(value[0]) is not 0:
 			if int(value[0]) > num_blocks or int(value[0]) < 0:
-				print("INVALID " + level[value[1]] + "BLOCK", value[0], "IN INODE", key, "AT OFFSET", offset)
+				print("INVALID" + level[value[1]] + "BLOCK", value[0], "IN INODE", key, "AT OFFSET", offset)
 
 			if int(key) > first_nonr_db:
 				if int(value[0]) < first_nonr_db:
-					print("RESERVED " + level[value[1]] + "BLOCK", value[0], "IN INODE", key, "AT OFFSET", offset)
+					print("RESERVED" + level[value[1]] + "BLOCK", value[0], "IN INODE", key, "AT OFFSET", offset)
 
 			if value[0] in bfree:
-				print("ALLOCATED " + level[value[1]] + "BLOCK", value[0], "ON FREELIST")
+				print("ALLOCATED" + level[value[1]] + "BLOCK", value[0], "ON FREELIST")
 
 			if value[0] in [x[0] for x in all_refblocks]:
 				all_refblocks.append((value[0], key, offset, value[1]))
@@ -132,7 +132,7 @@ for key in datablocks:
 					inode = item[1]
 					offset = item[2]
 					lev = item[3]
-					print("DUPLICATE " + level[lev] + "BLOCK", block, "IN INODE", inode, "AT OFFSET", offset)
+					print("DUPLICATE" + level[lev] + "BLOCK", block, "IN INODE", inode, "AT OFFSET", offset)
 			else:
 				all_refblocks.append((value[0], key, offset, value[1]))
 
@@ -174,7 +174,7 @@ for x in inodes:
 for knowninode in inodes:
     for freeinodenum in ifree:
         if knowninode == freeinodenum:
-            print("ALLOCATED INODE ", knowninode, " ON FREELIST")
+            print("ALLOCATED INODE", knowninode, "ON FREELIST")
 
 for knowninode in unallocatedInodes:
     onFreeList = 0
@@ -182,7 +182,7 @@ for knowninode in unallocatedInodes:
         if knowninode == int(freeinodenum):
             onFreeList = 1
     if onFreeList == 0:
-        print("UNALLOCATED INODE ", str(knowninode), " NOT ON FREELIST" )
+        print("UNALLOCATED INODE", str(knowninode), "NOT ON FREELIST" )
 
 
 ##################################################
@@ -208,8 +208,8 @@ for inode in directoryInodes:
                 print("DIRECTORY INODE", inode, "NAME", tup[1], "LINK TO INODE", tup[0], "SHOULD BE", inode)
         elif tup[1] == "'..'":
         #(3, 6, 1) -> (inode, name, parent inode)
-            if tup[2] == '2':
-                if tup[0] != '2':
+            if tup[2] == 2:
+                if tup[0] != 2:
                     print("DIRECTORY INODE", inode, "NAME", tup[1], "LINK TO INODE", tup[0], "SHOULD BE 2")
             else:
                 validparent = 0
@@ -232,5 +232,6 @@ for inode in directoryInodes:
                         break
                 if validparent == 0 or rightplace == 0:
                     print("DIRECTORY INODE", inode, "NAME", tup[1], "LINK TO INODE", tup[0], "SHOULD BE", correctlink)
-
+                    
 f.close()
+

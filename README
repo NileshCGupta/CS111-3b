@@ -3,12 +3,19 @@ NAME: 	Nilesh Gupta
 EMAIL: 	ngup@ucla.edu
 ID: 	604-489-201
 
-Christopher Thai
-* email *
-* UID *
+NAME:   Christopher Thai
+EMAIL:  chris98.vthai@sbcglobal.net
+ID:     804-595-489
+
+#File Descriptions
+Makefile: a makefile with 3 targets: default, dist, and clean
+
+README: this file
+
+lab3b.py: A python script with our program. It runs on Python 3, so make sure you use python3 to run the script.
 
 # Slip Days
 1 Slip day used for this deadline courtesy of Christopher. 
 
 # Notes
-We used Python v3 for this lab which is quite incompatible with v2 or any other verison. Please test accordingly. 
+As another reminder, we used Python v3 for this lab which is quite incompatible with v2 or any other verison. Please test accordingly. 
